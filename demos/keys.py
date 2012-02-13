@@ -5,6 +5,11 @@ import requests
 import json
 import os
 
+try:
+    os.mkdir(os.path.join(os.path.dirname(__file__), 'keys'))
+except OSError:
+    pass
+
 
 def pubkey_for_name(name):
     filename = '%s/keys/%s_pubkey.asc' % (os.path.dirname(__file__), name)
